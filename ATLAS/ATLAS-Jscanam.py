@@ -217,11 +217,11 @@ for tile in obsids.keys():
 		del(scansObs, level1, scans)
 
 		cscansList = []
-		for obsid in obsids[tile]["othogonal"]:	
+		for obsid in obsids[tile]["orthogonal"]:	
 			cscansObs = getObservation(obsid, useHsa=True, instrument="PACS")
 		        level1 = PacsContext(cscansObs.level1)
 		        cscans = level1.averaged.getCamera(camera).product.selectAll() 
-		        blueFilter2 = scans.meta["blue"].value
+		        blueFilter2 = cscans.meta["blue"].value
 	        	cscansList.append(cscans)
 		del(cscansObs, level1, cscans)
 
