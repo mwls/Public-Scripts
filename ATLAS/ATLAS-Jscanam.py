@@ -346,10 +346,10 @@ for tile in obsids.keys():
         scans = scansList[0].copy()
         scans.join(cscansList[0])
         for i in range(1,MAX([len(scansList),len(cscansList)])):
-             if len(scansList) < i:
+             if len(scansList) > i:
                   scans.join(scansList[i])
-             if len(cscansList) < i:
-                  cscans.join(cscansList[i])
+             if len(cscansList) > i:
+                  scans.join(cscansList[i])
         del(scansList, cscansList)
         sourceImage, scans = scanamorphosCreateSourceMask(scans, nSigma=4.0, createMask=False, galactic=galactic, calTree=calTree, debug=debug)
         
