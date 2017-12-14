@@ -207,6 +207,7 @@ for tile in obsids.keys():
 	        	# combine scans
 	        	cscansList.append(fits.load(pj(L1folder,orthL1files[i])))
         else:
+	        fits = FitsArchive()
 		scansList = []
 		for obsid in obsids[tile]["nominal"]:	
 			scansObs = getObservation(obsid, useHsa=True, instrument="PACS")
